@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For HER_NAME 🤍</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* Starry Background */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(white 1px, transparent 1px);
+    background-size: 3px 3px;
+    opacity: 0.15;
+    animation: stars 50s linear infinite;
+    z-index: -1;
+}
+@keyframes stars {
+    from {transform: translateY(0);}
+    to {transform: translateY(-200px);}
+}
+
+/* Password Screen */
+#password-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #111, #33001a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+#password-screen input {
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+}
+#password-screen button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    background: #ff3366;
+    color: white;
+    cursor: pointer;
+}
+
+/* Envelope */
+.envelope {
+    width: 200px;
+    height: 120px;
+    background: #ff3366;
+    margin: 100px auto;
+    position: relative;
+    cursor: pointer;
+}
+.envelope:before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 60px solid #ff3366;
+}
+.letter {
+    display: none;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    font-size: 1.2rem;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #ff4d88;
+}
+
+.name {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff99cc;
+}
+
+.quote {
+    font-style: italic;
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.4rem;
+    color: #ffccd9;
+}
+
+/* Timeline */
+.timeline {
+    max-width: 700px;
+    margin: auto;
+    text-align: left;
+}
+.timeline div {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left: 2px solid #ff4d88;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 40px;
+}
+.card {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 20px;
+}
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Forgive Button */
+.forgive-btn {
+    padding: 15px 40px;
+    border-radius: 40px;
+    border: none;
+    background: #ff3366;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.forgive-btn:hover {
+    transform: scale(1.1);
+    background: #ff0055;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: #ff4d88;
+    animation: floatUp 8s linear infinite;
+}
+@keyframes floatUp {
+    0% {transform: translateY(0); opacity: 1;}
+    100% {transform: translateY(-100vh); opacity: 0;}
+}
+
+footer {
+    padding: 40px;
+    background: #111;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Password -->
+<div id="password-screen">
+    <h2>This world opens only for you 🤍</h2>
+    <input type="password" id="password" placeholder="Enter our secret">
+    <button onclick="checkPassword()">Open</button>
+</div>
+
+<!-- Music -->
+<audio id="bg-music" loop>
+    <source src="yourmusic.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Envelope -->
+<div class="envelope" onclick="openLetter()"></div>
+
+<div class="letter" id="letter">
+    <h1>I'm Sorry 🤍</h1>
+    <div class="name">HER_NAME</div>
+    <p>
+        If I could turn back time, I would choose you again —  
+        but this time I would protect your heart better.
+    </p>
+</div>
+
+<section>
+    <div class="quote">
+        “It is with me… but it belongs to you.”
+    </div>
+</section>
+
+<section>
+    <h2>Our Story</h2>
+    <div class="timeline">
+        <div><strong>The Day We Met:</strong> The day everything changed for me.</div>
+        <div><strong>Our Best Memory:</strong> A moment I replay in my head every night.</div>
+        <div><strong>Today:</strong> Still choosing you. Still hoping.</div>
+    </div>
+</section>
+
+<section>
+    <h2>These Are With Me… But They Belong To You 🤍</h2>
+    <div class="gallery">
+        <div class="card">
+            <img src="image1.jpg">
+            <p>This is with me… but it belongs to you.</p>
+        </div>
+        <div class="card">
+            <img src="image2.jpg">
+            <p>I kept this safe, because it carries you.</p>
+        </div>
+        <div class="card">
+            <img src="image3.jpg">
+            <p>Every memory here whispers your name.</p>
+        </div>
+    </div>
+</section>
+
+   <section>
+    <h2>Will You Forgive Me?</h2>
+    <button class="forgive-btn" onclick="forgive()">Yes 🤍</button>
+</section>
+
+
+
+<footer>
+    Forever yours — always.
+</footer>
+
+<script>
+
+
+function checkPassword() {
+    var pass = document.getElementById("password").value;
+
+    if(pass === "Pallavi") {
+
+        // Fade out password screen
+        const screen = document.getElementById("password-screen");
+        screen.style.transition = "1s";
+        screen.style.opacity = "0";
+
+        setTimeout(function(){
+            screen.style.display = "none";
+            document.getElementById("bg-music").play();
+            document.body.style.animation = "fadeInMain 2s ease";
+        },1000);
+
+    } else {
+        alert("That’s not our secret 🤍");
+    }
+}
+
+/* Allow Enter key to unlock */
+document.getElementById("password").addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        checkPassword();
+    }
+});
+
+function scrollToSection() {
+    document.getElementById("message").scrollIntoView({ behavior: "smooth" });
+}
+
+/* Floating Hearts Generator */
+setInterval(function() {
+    var heart = document.createElement("div");
+    heart.className = "heart";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.innerHTML = "❤";
+    document.body.appendChild(heart);
+
+    setTimeout(function() {
+        heart.remove();
+    }, 8000);
+}, 500);
+
+/* Soft sparkle effect */
+setInterval(function(){
+    let sparkle = document.createElement("div");
+    sparkle.style.position = "fixed";
+    sparkle.style.left = Math.random()*100 + "vw";
+    sparkle.style.top = Math.random()*100 + "vh";
+    sparkle.style.color = "#ff99cc";
+    sparkle.style.fontSize = "12px";
+    sparkle.innerHTML = "✦";
+    sparkle.style.opacity = "0.8";
+    sparkle.style.transition = "2s";
+    document.body.appendChild(sparkle);
+
+    setTimeout(()=>sparkle.remove(),2000);
+},800);
+function forgive() {
+
+    // Disable button so it can't be clicked again
+    const btn = document.querySelector(".forgive-btn");
+    btn.disabled = true;
+    btn.innerHTML = "Forever 🤍";
+
+    // Fade out page smoothly
+    document.body.style.transition = "1s";
+    document.body.style.opacity = "0";
+
+    // Redirect after 1 second
+    setTimeout(function() {
+        window.location.href = "return.html";
+    }, 1000);
+}
+
+</script>
+
+
+
+</body>
+</html>

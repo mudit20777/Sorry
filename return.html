@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everything Is Yours 🤍</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #1a0010, #000);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    overflow-x: hidden;
+}
+
+/* Soft fade-in */
+.fade-in {
+    animation: fadeIn 2s ease forwards;
+    opacity: 0;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 {
+    color: #ff4d88;
+    font-size: 2.5rem;
+}
+
+.note {
+    font-size: 1.3rem;
+    margin-top: 30px;
+    line-height: 1.8;
+    color: #ffccd9;
+}
+
+/* Floating Hearts */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    color: #ff4d88;
+    animation: floatUp 8s linear infinite;
+}
+@keyframes floatUp {
+    0% {transform: translateY(0); opacity: 1;}
+    100% {transform: translateY(-100vh); opacity: 0;}
+}
+
+.signature {
+    margin-top: 60px;
+    font-style: italic;
+    color: #ff99cc;
+}
+
+button {
+    margin-top: 40px;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: none;
+    background: #ff3366;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container fade-in">
+    <h1>Everything Here Is Yours 🤍</h1>
+
+    <div class="note">
+        The memories I kept.  
+        The little things I saved.  
+        The moments I held onto.  
+
+        <br><br>
+
+        None of them were ever mine.  
+        They were always yours.  
+
+        <br><br>
+
+        If you tell me where you are…  
+        I will bring everything back  
+        to where it truly belongs.  
+
+        <br><br>
+
+        Just send me your address.  
+        I promise I’ll handle your heart more carefully this time.
+    </div>
+
+    <button onclick="softGlow()">I’ll Tell You 🤍</button>
+
+    <div class="signature">
+        Forever choosing you.
+    </div>
+</div>
+
+<script>
+
+/* Floating Hearts */
+setInterval(function(){
+    var heart=document.createElement("div");
+    heart.className="heart";
+    heart.style.left=Math.random()*100+"vw";
+    heart.innerHTML="❤";
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),8000);
+},500);
+
+/* Soft glow effect on button click */
+function softGlow(){
+    document.body.style.transition = "1.5s";
+    document.body.style.background = "linear-gradient(to bottom right, #33001a, #000)";
+}
+
+</script>
+
+</body>
+</html>
